@@ -9,7 +9,7 @@
   text-align: left;
 }
 
-/* Position Icon */
+/* Position icon */
 #what .items .item i {
   margin-right: 1.3rem;
   align-self: center;
@@ -45,7 +45,7 @@
   }
 
   #clients .items img {
-    width: 80%
+    width: 80%;
   }
 
   #clients .items div:last-child {
@@ -65,8 +65,9 @@
 @media(max-height: 568px) {
   #showcase .showcase-content {
     margin-top: -2rem;
-    top: 140;
+    top: 140px;
   }
+
   .l-heading {
     font-size: 3rem;
   }
