@@ -65,16 +65,16 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
-.category-sports { background: var(--sports-color);}
-.category-ent { background: var(--ent-color);}
-.category-tech { background: var(--tech-color);}
+.category-sports { background: var(--sports-color) }
+.category-ent { background: var(--ent-color) }
+.category-tech { background: var(--tech-color) }
 
 .btn {
   display: inline-block;
   border: none;
   background: var(--dark-color);
   color: #fff;
-  padding: 0.5rem  1.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .btn-light { background: var(--light-color) }
@@ -130,15 +130,15 @@ h1, h2, h3, h4, h5, h6 {
 .py-2 { padding: 2rem 0 }
 .py-3 { padding: 3rem 0 }
 .p-1 { padding: 1.5rem }
-.p-2 { padding: 2.5rem }
-.p-3 { padding: 3.5rem }
+.p-2 { padding: 2rem }
+.p-3 { padding: 3rem }
 
 .l-heading {
   font-size: 3rem;
 }
 
 .list li {
-  padding: .5rem;
+  padding: .5rem 0;
   border-bottom: #555 dotted 1px;
   width: 90%;
 }
@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-color) !important;
 }
 
-/* Inner page frid container */
+/* Inner page grid container */
 .page-container {
   display: grid;
   grid-template-columns: 5fr 2fr;
@@ -155,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
   grid-gap: 1.5rem;
 }
 
-.page-container *:first-child {
+.page-container > *:first-child {
   grid-row: 1 / span 3;
 }
 
@@ -311,4 +311,3 @@ h1, h2, h3, h4, h5, h6 {
 #main-footer .footer-container input[type='submit'] {
   width: 90%;
 }
-
