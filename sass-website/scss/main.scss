@@ -22,6 +22,7 @@ header {
   }
 }
 
+/* Nested Selectors */
 .section{
   padding: 3rem;
 
@@ -40,6 +41,8 @@ header {
   }
 }
 
+/*
+Using sudo-selectors within nested environment
 a {
   color: #333;
 
@@ -47,6 +50,29 @@ a {
     color: coral;
   }
 }
+*/
 
+/* %shared style setup to be interited */
+%btn-shared {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 1rem;
+}
 
+/* Inherit/@extend shared style */
+.btn {
+  &-light {
+    @extend %btn-shared;
+    background-color: $light-color;
+    color: #333;
+  }
 
+  &-dark {
+    @extend %btn-shared;
+    background-color: $dark-color;
+    color: #fff;
+  }
+}
