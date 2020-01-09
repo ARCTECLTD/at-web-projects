@@ -1,4 +1,6 @@
-@import 'variables'; /* import partial scss for _variables */
+// import partial scss for _variables
+@import 'variables'; 
+@import 'functions'; 
 
 * {
   margin: 0;
@@ -12,9 +14,10 @@ body {
   line-height: 1.5;
 }
 
+// using set-text-color function
 header {
   background: $dark-color;
-  color: $light-color;
+  color: set-text-color($dark-color);
   padding: 1rem;
 
   h1 {
@@ -22,7 +25,7 @@ header {
   }
 }
 
-/* Nested Selectors */
+// Nested Selectors
 .section{
   padding: 3rem;
 
@@ -32,27 +35,16 @@ header {
 
   &-a {
     background: $primary-color;
-    color: #fff;
+    color: set-text-color($primary-color);
   }
 
   &-b {
     background: $secondary-color;
-    color: #fff;
+    color: set-text-color($secondary-color);
   }
 }
 
-/*
-Using sudo-selectors within nested environment
-a {
-  color: #333;
-
-  &:hover {
-    color: coral;
-  }
-}
-*/
-
-/* %shared style setup to be interited */
+// %shared style setup to be interited
 %btn-shared {
   display: inline-block;
   padding: 0.7rem 2rem;
@@ -62,17 +54,31 @@ a {
   margin-top: 1rem;
 }
 
-/* Inherit/@extend shared style */
+// Inherit/@extend shared style
 .btn {
   &-light {
     @extend %btn-shared;
     background-color: $light-color;
-    color: #333;
+    color: set-text-color($light-color);
+
+    /* 
+    Using sudo-selectors within nested environment
+    Using mixin to transform
+    */
+    &:hover {
+      @include transform(rotate(20deg));
+      background-color: darken($light-color, 10%);
+    }
   }
 
   &-dark {
     @extend %btn-shared;
     background-color: $dark-color;
-    color: #fff;
+    color: set-text-color($dark-color);
+
+    &:hover {
+      @include transform(rotate(-20deg));
+      background-color: lighten($dark-color, 10%);
+    }
   }
 }

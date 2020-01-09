@@ -4,7 +4,6 @@ _ indicates a partial file
 partial: do not compile into another css file
 imported by the main scss/css
  */
-/* import partial scss for _variables */
 * {
   margin: 0;
   padding: 0; }
@@ -17,12 +16,11 @@ body {
 
 header {
   background: #333;
-  color: #f4f4f4;
+  color: #fff;
   padding: 1rem; }
   header h1 {
     text-align: center; }
 
-/* Nested Selectors */
 .section {
   padding: 3rem; }
   .section h3 {
@@ -32,19 +30,8 @@ header {
     color: #fff; }
   .section-b {
     background: skyblue;
-    color: #fff; }
+    color: #000; }
 
-/*
-Using sudo-selectors within nested environment
-a {
-  color: #333;
-
-  &:hover {
-    color: coral;
-  }
-}
-*/
-/* %shared style setup to be interited */
 .btn-light, .btn-dark {
   display: inline-block;
   padding: 0.7rem 2rem;
@@ -53,11 +40,24 @@ a {
   text-decoration: none;
   margin-top: 1rem; }
 
-/* Inherit/@extend shared style */
 .btn-light {
   background-color: #f4f4f4;
-  color: #333; }
+  color: #000;
+  /* 
+    Using sudo-selectors within nested environment
+    Using mixin to transform
+    */ }
+  .btn-light:hover {
+    --webkit-transform: $property;
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+    background-color: #dbdbdb; }
 
 .btn-dark {
   background-color: #333;
   color: #fff; }
+  .btn-dark:hover {
+    --webkit-transform: $property;
+    -ms-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+    background-color: #4d4d4d; }
