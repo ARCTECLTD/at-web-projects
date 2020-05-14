@@ -187,16 +187,16 @@ const App = (function (ItemCtrl, UICtrl) {
     // Add item event
     document
       .querySelector(UISelectors.addBtn)
-      .addEventListener("click", itemEditClick);
+      .addEventListener("click", itemAddSubmit);
 
     // Edit icon click event
     document
       .querySelector(UISelectors.itemList)
-      .addEventListener("click", itemUpdateSubmit);
+      .addEventListener("click", itemEditClick);
   };
 
-  // Click edit item
-  const itemEditClick = function (e) {
+  // Add item submit
+  const itemAddSubmit = function (e) {
     // get form input from UI controller
     const input = UICtrl.getItemInput();
 
@@ -219,8 +219,8 @@ const App = (function (ItemCtrl, UICtrl) {
     e.preventDefault();
   };
 
-  // Update item submit
-  const itemUpdateSubmit = function (e) {
+  // Click edit item
+  const itemEditClick = function (e) {
     if (e.target.classList.contains("edit-item")) {
       // Get list item id (item-0, item-1)
       const listId = e.target.parentNode.parentNode.id;
