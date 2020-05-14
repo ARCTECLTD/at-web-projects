@@ -187,7 +187,7 @@ const App = (function (ItemCtrl, UICtrl) {
     // Add item event
     document
       .querySelector(UISelectors.addBtn)
-      .addEventListener("click", itemAddSubmit);
+      .addEventListener("click", itemEditClick);
 
     // Edit icon click event
     document
@@ -195,8 +195,8 @@ const App = (function (ItemCtrl, UICtrl) {
       .addEventListener("click", itemUpdateSubmit);
   };
 
-  // Add item submit
-  const itemAddSubmit = function (e) {
+  // Click edit item
+  const itemEditClick = function (e) {
     // get form input from UI controller
     const input = UICtrl.getItemInput();
 
