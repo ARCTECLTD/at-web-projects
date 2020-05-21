@@ -1,0 +1,42 @@
+Babel Webpack Starter
+A starter pack to build JavaScript applications using standards from ES2015, ES2016 & ES2017. It uses webpack, Babel and webpack-dev-server to compile and serve. It is fully compatible with Async/Await as it uses the Babel polyfill.
+
+Version
+1.1.0
+
+Usage
+Installation
+Install the dependencies
+
+$ npm install
+Serve
+To serve in the browser - Runs webpack-dev-server
+
+$ npm start
+Build
+Compile and build
+
+$ npm run build
+
+// Create a fake REST API Using JSON Server
+
+	// Install API server
+	npm install json-server --save
+
+	// Add data file to package script
+	"json:server": "json-server --watch api/db.json"
+
+	// Run data file
+	npm run json: server
+
+// Run the website with data - both must run
+npm run json: server
+npm start
+
+// Compile "server app" down to "local build file"
+npm run built
+
+// Upload to server
+Build file
+index.html
+assets folder
